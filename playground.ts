@@ -73,7 +73,13 @@ type Car = {
 } 
 type RaceCar = {
     speed: number
-} & Car & { milage: number} 
+    maxSpeed: number
+} & Car & { milage: number} ;
+
+type CityCar  = {
+    space : number,
+    name: string
+}
 interface BusinessPerson extends Person {
     salary : number
 }
@@ -106,6 +112,10 @@ const raceCar: RaceCar ={
     speed: 540,
     name: 'Frord',
     milage: 15000
+}
+// union
+const carFunc = (car: RaceCar | CityCar) {
+    console.log(car)
 }
 console.log(car);
 console.log(raceCar);
