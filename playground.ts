@@ -111,11 +111,17 @@ const car: Car ={
 const raceCar: RaceCar ={
     speed: 540,
     name: 'Frord',
-    milage: 15000
+    milage: 15000,
+    maxSpeed: 320,
 }
 // union
 const carFunc = (car: RaceCar | CityCar) {
     console.log(car)
+    // casting types 1
+    console.log((car as RaceCar).maxSpeed)
+    // casting types 2nd way of casting
+    console.log((<CityCar>car).space);
+    
 }
 console.log(car);
 console.log(raceCar);
