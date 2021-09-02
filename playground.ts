@@ -96,17 +96,19 @@ const play = () => {
     const justPerson: Person = {
         name: 'Jon',
         age: 65,
+        kind:'business'
     }
     const person : AcademicPerson = {
         name: 'Jon',
         age: 35,
         publications: ['2','54'],
-        salary: 4500
+        kind: 'academic'
     }
     const businessperson : BusinessPerson = {
         name: 'Jon',
         age: 40,
-        salary: 450000000
+        salary: 450000000,
+        kind: 'business'
     }
 // console.log(justPerson);
 // console.log(person);
@@ -148,7 +150,7 @@ const personFunc =(human: Human ) => {
   }else if (human.kind === 'academic'){
 
   }else {
-      console.log(human.kind);
+      console.log(human);
       
   }
 }
