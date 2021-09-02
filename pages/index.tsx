@@ -1,15 +1,18 @@
-import { useEffect } from "react";
-import play from '../playground';
+import { InferGetServerSidePropsType } from 'next'
+export async function getStaticProps () {
+  const products = [1,2,3];
+  return {
+    props: {
+      products
+    },
+    revalidate : 4 * 60 *60
+  }
+}
+export default function Home({ products }: InferGetServerSidePropsType<typeof getStaticProps>) {
 
-export default function Home() {
-useEffect(() => {
-  play()
-}, [])
-  const message: string = 'Hello World';
-  
   return (
     <div>
-      <h1>Hello there</h1>
+      {products}
     </div>
   )
 }
