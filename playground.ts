@@ -66,6 +66,7 @@
 // }
 interface Person {
     name: string
+    kind: 'business' | 'academic'
     age: number
 }
 type Car = {
@@ -82,10 +83,13 @@ type CityCar  = {
 }
 interface BusinessPerson extends Person {
     salary : number
+    kind: 'business'
 }
-interface AcademicPerson extends BusinessPerson {
+interface AcademicPerson extends Person {
  publications: string[]
+ kind: 'academic'
 }
+type Human = BusinessPerson | AcademicPerson;
 const play = () => {
     const justPerson: Person = {
         name: 'Jon',
@@ -123,6 +127,15 @@ const carFunc = (car: RaceCar | CityCar) => {
     console.log((<CityCar>car).space);
     
 }
+const personFunc =(human: Human ) => {
+  if (human.kind === 'business') {
 
+  }else if (human.kind === 'academic'){
+
+  }else {
+      console.log(human.kind);
+      
+  }
+}
 }
 export default play;
