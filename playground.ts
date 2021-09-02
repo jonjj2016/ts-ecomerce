@@ -115,7 +115,7 @@ const raceCar: RaceCar ={
     maxSpeed: 320,
 }
 // union
-const carFunc = (car: RaceCar | CityCar) {
+const carFunc = (car: RaceCar | CityCar) => {
     console.log(car)
     // casting types 1
     console.log((car as RaceCar).maxSpeed)
@@ -123,8 +123,6 @@ const carFunc = (car: RaceCar | CityCar) {
     console.log((<CityCar>car).space);
     
 }
-console.log(car);
-console.log(raceCar);
 
 }
 export default play;
