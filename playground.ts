@@ -64,6 +64,8 @@
 // console.log(random.length);
 
 // }
+
+
 interface Person {
     name: string
     kind: 'business' | 'academic'
@@ -118,6 +120,19 @@ const raceCar: RaceCar ={
     milage: 15000,
     maxSpeed: 320,
 }
+interface Fighter {
+    stage: string
+    wins: number
+    draws: number
+}
+const ff = (man: Fighter) => {
+    console.log(man.mass);   
+}
+// merging interface types
+interface Fighter {
+    mass: number
+}
+
 // union
 const carFunc = (car: RaceCar | CityCar) => {
     console.log(car)
